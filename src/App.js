@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from 'axios';
 import DisplayEmployee from './components/DisplayEmployee';
+
 const sampleEmployee = {
   gender: 'male',
   name: {
@@ -35,6 +36,7 @@ class App extends React.Component {
     axios.get('https://randomuser.me/api?nat=en')
     .then(response => response.data)
     .then(data => {
+      console.log(data)
       this.setState({
         employee: data.results[0]
       })
